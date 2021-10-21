@@ -17,13 +17,16 @@ jobs:
     steps:
     - uses: actions/checkout@master
     
-    - shell: bash
+    - name: Validate secret storage
+      shell: bash
       env: 
         repo_1: ${{ secrets.REPO_SECRET_1 }}
         env_1: ${{ secrets.ENV_SECRET_1 }}
         env_2: ${{ secrets.ENV_SECRET_2 }}
-      run: |
-        # sleep 20
-        echo "$repo_1"
-        echo "$env_1"
-        echo "$env_2"
+      run:  |
+        test=$(echo $repo_1 | tr " " "-")
+        echo "Repo Secret: ${test}"
+        test=$(echo $env_1 | tr " " "-")
+        echo "Env Secret: ${test}"
+        test=$(echo $env_2 | tr " " "-")
+        echo "Another Env Secret: ${test}"
