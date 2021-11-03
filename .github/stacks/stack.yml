@@ -62,12 +62,6 @@ configs:
           - name: ENV_SECRET_2
             value: ${{ inputs.ENV_SECRET_2 }}
 
- security:
-    parameters: 
-      vulnerability-alerts: ${{inputs.Enable_Vulnerability_Alerts}}
-      automated-security-fixes: true
-
-
 #-------------------------------------------------------------
 # Initialization workflow to run
 # This workflow file will NOT be part of the stack (new repo created). 
