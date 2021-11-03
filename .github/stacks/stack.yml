@@ -62,7 +62,6 @@ configs:
           - name: ENV_SECRET_2
             value: ${{ inputs.ENV_SECRET_2 }}
 
-  # Security and configuration settings to be enabled/disabled
  security:
     parameters: 
       vulnerability-alerts: ${{inputs.Enable_Vulnerability_Alerts}}
